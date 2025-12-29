@@ -9,47 +9,6 @@ const stats = [
   { value: '1M+', label: 'Active Customers' },
 ];
 
-const useCases = [
-  {
-    title: 'Web Applications',
-    description: 'Host scalable websites and web apps with auto-scaling and global CDN.',
-    icon: '🖥️',
-  },
-  {
-    title: 'Data Analytics',
-    description: 'Process petabytes of data with managed analytics services.',
-    icon: '📈',
-  },
-  {
-    title: 'Machine Learning',
-    description: 'Build, train, and deploy ML models at scale.',
-    icon: '🤖',
-  },
-  {
-    title: 'DevOps & CI/CD',
-    description: 'Automate your software delivery pipeline.',
-    icon: '🔄',
-  },
-];
-
-const testimonials = [
-  {
-    quote: 'Bhoomi Cloud helped us reduce infrastructure costs by 40% while improving performance.',
-    author: 'Rajesh Kumar',
-    role: 'CTO, TechStart India',
-  },
-  {
-    quote: 'The multi-tenant architecture made it easy to manage our enterprise clients.',
-    author: 'Priya Sharma',
-    role: 'VP Engineering, DataFlow',
-  },
-  {
-    quote: 'Exceptional support and documentation. Migration was seamless.',
-    author: 'Amit Patel',
-    role: 'DevOps Lead, FinServe',
-  },
-];
-
 export function LandingPage() {
   const navigate = useNavigate();
 
@@ -63,7 +22,6 @@ export function LandingPage() {
             <span>Bhoomi Cloud</span>
           </a>
           <nav className="header-nav">
-            <a href="#solutions">Solutions</a>
             <a href="#pricing">Pricing</a>
             <a href="#docs">Documentation</a>
           </nav>
@@ -174,49 +132,6 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Use Cases */}
-      <section className="usecases-section" id="solutions">
-        <div className="section-container">
-          <div className="section-header">
-            <h2>Built for Every Workload</h2>
-            <p>From startups to enterprises, power your applications with Bhoomi Cloud</p>
-          </div>
-          <div className="usecases-grid">
-            {useCases.map((useCase, index) => (
-              <div key={index} className="usecase-card">
-                <div className="usecase-icon">{useCase.icon}</div>
-                <h3>{useCase.title}</h3>
-                <p>{useCase.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="testimonials-section">
-        <div className="section-container">
-          <div className="section-header">
-            <h2>Trusted by Industry Leaders</h2>
-            <p>See what our customers have to say</p>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
-                <div className="testimonial-quote">"{testimonial.quote}"</div>
-                <div className="testimonial-author">
-                  <div className="author-avatar">{testimonial.author[0]}</div>
-                  <div>
-                    <div className="author-name">{testimonial.author}</div>
-                    <div className="author-role">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Preview */}
       <section className="pricing-section" id="pricing">
         <div className="section-container">
@@ -261,24 +176,6 @@ export function LandingPage() {
                 <li>On-premise hybrid</li>
               </ul>
               <button className="btn-secondary">Contact Sales</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="section-container">
-          <div className="cta-content">
-            <h2>Ready to Get Started?</h2>
-            <p>Create your free account today and get ₹10,000 in credits</p>
-            <div className="cta-buttons">
-              <button className="btn-primary btn-large" onClick={() => navigate('/login')}>
-                Create Free Account
-              </button>
-              <button className="btn-outline btn-large">
-                Talk to an Expert
-              </button>
             </div>
           </div>
         </div>
