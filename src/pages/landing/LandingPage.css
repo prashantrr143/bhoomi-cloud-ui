@@ -1,0 +1,171 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #232f3e;
+}
+
+/* Header */
+.landing-header {
+  background: #232f3e;
+  border-bottom: 1px solid #37475a;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background: #ff9900;
+  color: #111111;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #ec8b00;
+}
+
+.btn-large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+/* Main */
+.landing-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.hero {
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: #d5dbdb;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 32px;
+}
+
+/* Footer */
+.landing-footer {
+  background: #232f3e;
+  border-top: 1px solid #37475a;
+  padding: 24px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #d5dbdb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #ff9900;
+  text-decoration: underline;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #aab7b8;
+  font-size: 13px;
+}
+
+.footer-legal a {
+  color: #aab7b8;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
