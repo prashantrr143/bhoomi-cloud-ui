@@ -72,66 +72,6 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Features Highlight */}
-      <section className="features-section">
-        <div className="section-container">
-          <div className="features-content">
-            <div className="features-text">
-              <h2>Why Choose Bhoomi Cloud?</h2>
-              <div className="feature-item">
-                <div className="feature-icon">🇮🇳</div>
-                <div>
-                  <h4>Data Sovereignty</h4>
-                  <p>Your data stays in India. Fully compliant with local regulations and data protection laws.</p>
-                </div>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">⚡</div>
-                <div>
-                  <h4>Low Latency</h4>
-                  <p>Multiple data centers across India ensure minimal latency for your users.</p>
-                </div>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">💵</div>
-                <div>
-                  <h4>Cost Effective</h4>
-                  <p>Pay only for what you use. No hidden fees, transparent pricing in INR.</p>
-                </div>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">🛡️</div>
-                <div>
-                  <h4>Enterprise Security</h4>
-                  <p>ISO 27001, SOC 2 certified. End-to-end encryption and advanced threat protection.</p>
-                </div>
-              </div>
-            </div>
-            <div className="features-visual">
-              <div className="console-preview">
-                <div className="console-header">
-                  <div className="console-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <span>Bhoomi Cloud Console</span>
-                </div>
-                <div className="console-body">
-                  <div className="console-sidebar"></div>
-                  <div className="console-main">
-                    <div className="console-card"></div>
-                    <div className="console-card"></div>
-                    <div className="console-card small"></div>
-                    <div className="console-card small"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Preview */}
       <section className="pricing-section" id="pricing">
         <div className="section-container">
