@@ -2,45 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { BhoomiLogo } from '@/components/common';
 import './LandingPage.css';
 
-const services = [
-  {
-    icon: '⚡',
-    title: 'Compute',
-    description: 'Scalable virtual machines, containers, and serverless computing',
-    features: ['EC2 Instances', 'Lambda Functions', 'ECS & EKS'],
-  },
-  {
-    icon: '🗄️',
-    title: 'Storage',
-    description: 'Secure, durable, and highly available storage solutions',
-    features: ['S3 Object Storage', 'EBS Volumes', 'Glacier Archive'],
-  },
-  {
-    icon: '🌐',
-    title: 'Networking',
-    description: 'Build secure and isolated cloud networks',
-    features: ['VPC', 'Load Balancers', 'Route 53 DNS'],
-  },
-  {
-    icon: '🔐',
-    title: 'Security & IAM',
-    description: 'Identity management and security controls',
-    features: ['IAM Policies', 'Security Groups', 'KMS Encryption'],
-  },
-  {
-    icon: '📊',
-    title: 'Monitoring',
-    description: 'Real-time visibility into your infrastructure',
-    features: ['CloudWatch Metrics', 'Alarms', 'Log Analytics'],
-  },
-  {
-    icon: '💰',
-    title: 'Cost Management',
-    description: 'Optimize spending with detailed billing insights',
-    features: ['Cost Explorer', 'Budgets', 'Usage Reports'],
-  },
-];
-
 const stats = [
   { value: '99.99%', label: 'Uptime SLA' },
   { value: '25+', label: 'Availability Zones' },
@@ -102,7 +63,6 @@ export function LandingPage() {
             <span>Bhoomi Cloud</span>
           </a>
           <nav className="header-nav">
-            <a href="#services">Services</a>
             <a href="#solutions">Solutions</a>
             <a href="#pricing">Pricing</a>
             <a href="#docs">Documentation</a>
@@ -148,31 +108,6 @@ export function LandingPage() {
               <div key={index} className="stat-item">
                 <span className="stat-value">{stat.value}</span>
                 <span className="stat-label">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="services-section" id="services">
-        <div className="section-container">
-          <div className="section-header">
-            <h2>Cloud Services</h2>
-            <p>Everything you need to build, deploy, and scale your applications</p>
-          </div>
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <ul className="service-features">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
-                </ul>
-                <a href="#" className="service-link">Learn more →</a>
               </div>
             ))}
           </div>
