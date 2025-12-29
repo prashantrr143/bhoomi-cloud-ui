@@ -1,14 +1,14 @@
-/* Variables */
+/* Variables - Light Theme */
 :root {
   --primary-color: #ff9900;
   --primary-hover: #ec8b00;
-  --dark-bg: #0f1419;
-  --darker-bg: #0a0d10;
-  --card-bg: #161b22;
-  --border-color: #30363d;
-  --text-primary: #ffffff;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
+  --dark-bg: #f8f9fa;
+  --darker-bg: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e1e4e8;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
   --gradient-start: #ff9900;
   --gradient-end: #ff5500;
   --success-color: #138808;
@@ -54,7 +54,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 20, 25, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
@@ -137,7 +137,7 @@
 
 .btn-primary {
   background: var(--primary-color);
-  color: #111111;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -145,11 +145,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
 }
 
 .btn-primary:hover {
   background: var(--primary-hover);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4);
 }
 
 .btn-secondary {
@@ -225,8 +227,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 153, 0, 0.15) 0%, transparent 40%),
-              radial-gradient(circle at 70% 60%, rgba(255, 85, 0, 0.1) 0%, transparent 40%);
+  background: radial-gradient(circle at 30% 20%, rgba(255, 153, 0, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 70% 60%, rgba(255, 85, 0, 0.06) 0%, transparent 40%);
   animation: float 20s ease-in-out infinite;
 }
 
@@ -326,12 +328,13 @@
   border-radius: 12px;
   padding: 32px;
   transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .service-card:hover {
   border-color: var(--primary-color);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 153, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
@@ -630,6 +633,7 @@
   text-align: center;
   position: relative;
   transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .pricing-card:hover {
@@ -638,7 +642,7 @@
 
 .pricing-card.featured {
   border-color: var(--primary-color);
-  box-shadow: 0 0 40px rgba(255, 153, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(255, 153, 0, 0.2);
 }
 
 .pricing-badge {
@@ -647,7 +651,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary-color);
-  color: #111111;
+  color: #ffffff;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 12px;
@@ -745,7 +749,8 @@
 
 /* Footer */
 .landing-footer {
-  background: var(--darker-bg);
+  background: var(--dark-bg);
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-main {
@@ -797,7 +802,7 @@
 
 .social-links a:hover {
   background: var(--primary-color);
-  color: #111111;
+  color: #ffffff;
   border-color: var(--primary-color);
 }
 
