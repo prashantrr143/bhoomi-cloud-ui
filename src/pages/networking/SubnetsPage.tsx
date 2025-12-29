@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
 import Pagination from '@cloudscape-design/components/pagination';
@@ -13,6 +14,7 @@ import type { Subnet } from '@/types';
 const PAGE_SIZE = 10;
 
 export function SubnetsPage() {
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<Subnet[]>([]);
   const [filterText, setFilterText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,7 +45,7 @@ export function SubnetsPage() {
             <SpaceBetween size="xs" direction="horizontal">
               <Button disabled={selectedItems.length !== 1}>View details</Button>
               <Button disabled={selectedItems.length === 0}>Delete</Button>
-              <Button variant="primary">Create subnet</Button>
+              <Button variant="primary" onClick={() => navigate('/networking/subnets/create')}>Create subnet</Button>
             </SpaceBetween>
           }
           description="Subnets within your VPCs"
@@ -123,7 +125,7 @@ export function SubnetsPage() {
           title="No subnets"
           description="No subnets found. Create a subnet in one of your VPCs."
           actionLabel="Create subnet"
-          onAction={() => console.log('Create subnet')}
+          onAction={() => navigate('/networking/subnets/create')}
         />
       }
       stickyHeader

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
 import Pagination from '@cloudscape-design/components/pagination';
@@ -13,6 +14,7 @@ import type { SecurityGroup } from '@/types';
 const PAGE_SIZE = 10;
 
 export function SecurityGroupsPage() {
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<SecurityGroup[]>([]);
   const [filterText, setFilterText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -44,7 +46,7 @@ export function SecurityGroupsPage() {
               <Button disabled={selectedItems.length !== 1}>Edit inbound rules</Button>
               <Button disabled={selectedItems.length !== 1}>Edit outbound rules</Button>
               <Button disabled={selectedItems.length === 0}>Delete</Button>
-              <Button variant="primary">Create security group</Button>
+              <Button variant="primary" onClick={() => navigate('/networking/security-groups/create')}>Create security group</Button>
             </SpaceBetween>
           }
           description="Control inbound and outbound traffic for your resources"
@@ -117,7 +119,7 @@ export function SecurityGroupsPage() {
           title="No security groups"
           description="No security groups found. Create a security group for your VPC."
           actionLabel="Create security group"
-          onAction={() => console.log('Create security group')}
+          onAction={() => navigate('/networking/security-groups/create')}
         />
       }
       stickyHeader

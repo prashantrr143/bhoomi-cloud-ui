@@ -62,6 +62,9 @@ const LoadBalancersPage = lazy(() =>
 const TargetGroupsPage = lazy(() =>
   import('@/pages/compute').then((m) => ({ default: m.TargetGroupsPage }))
 );
+const CreateTargetGroupPage = lazy(() =>
+  import('@/pages/compute').then((m) => ({ default: m.CreateTargetGroupPage }))
+);
 
 // Networking pages
 const VPCsPage = lazy(() => import('@/pages/networking').then((m) => ({ default: m.VPCsPage })));
@@ -85,6 +88,18 @@ const ElasticIPsPage = lazy(() =>
 );
 const NetworkACLsPage = lazy(() =>
   import('@/pages/networking').then((m) => ({ default: m.NetworkACLsPage }))
+);
+const CreateVPCPage = lazy(() =>
+  import('@/pages/networking').then((m) => ({ default: m.CreateVPCPage }))
+);
+const CreateSubnetPage = lazy(() =>
+  import('@/pages/networking').then((m) => ({ default: m.CreateSubnetPage }))
+);
+const CreateSecurityGroupPage = lazy(() =>
+  import('@/pages/networking').then((m) => ({ default: m.CreateSecurityGroupPage }))
+);
+const CreateRouteTablePage = lazy(() =>
+  import('@/pages/networking').then((m) => ({ default: m.CreateRouteTablePage }))
 );
 
 // Storage pages
@@ -155,6 +170,20 @@ const AccessAnalyzerPage = lazy(() =>
   import('@/pages/iam').then((m) => ({ default: m.AccessAnalyzerPage }))
 );
 
+// Support pages
+const SupportCenterPage = lazy(() =>
+  import('@/pages/support').then((m) => ({ default: m.SupportCenterPage }))
+);
+const CasesPage = lazy(() =>
+  import('@/pages/support').then((m) => ({ default: m.CasesPage }))
+);
+const CreateCasePage = lazy(() =>
+  import('@/pages/support').then((m) => ({ default: m.CreateCasePage }))
+);
+const CaseDetailPage = lazy(() =>
+  import('@/pages/support').then((m) => ({ default: m.CaseDetailPage }))
+);
+
 // Settings pages
 const ProfilePage = lazy(() =>
   import('@/pages/settings').then((m) => ({ default: m.ProfilePage }))
@@ -219,15 +248,20 @@ export default function App() {
               {/* Compute - Load Balancing */}
               <Route path="/compute/load-balancers" element={<LoadBalancersPage />} />
               <Route path="/compute/target-groups" element={<TargetGroupsPage />} />
+              <Route path="/compute/target-groups/create" element={<CreateTargetGroupPage />} />
 
               {/* Networking */}
               <Route path="/networking/vpcs" element={<VPCsPage />} />
+              <Route path="/networking/vpcs/create" element={<CreateVPCPage />} />
               <Route path="/networking/subnets" element={<SubnetsPage />} />
+              <Route path="/networking/subnets/create" element={<CreateSubnetPage />} />
               <Route path="/networking/route-tables" element={<RouteTablesPage />} />
+              <Route path="/networking/route-tables/create" element={<CreateRouteTablePage />} />
               <Route path="/networking/internet-gateways" element={<InternetGatewaysPage />} />
               <Route path="/networking/nat-gateways" element={<NATGatewaysPage />} />
               <Route path="/networking/elastic-ips" element={<ElasticIPsPage />} />
               <Route path="/networking/security-groups" element={<SecurityGroupsPage />} />
+              <Route path="/networking/security-groups/create" element={<CreateSecurityGroupPage />} />
               <Route path="/networking/network-acls" element={<NetworkACLsPage />} />
 
               {/* Storage */}
@@ -268,6 +302,12 @@ export default function App() {
               <Route path="/iam/identity-providers/create" element={<AddIdentityProviderPage />} />
               <Route path="/iam/identity-providers/:providerId" element={<IdentityProvidersPage />} />
               <Route path="/iam/access-analyzer" element={<AccessAnalyzerPage />} />
+
+              {/* Support */}
+              <Route path="/support" element={<SupportCenterPage />} />
+              <Route path="/support/cases" element={<CasesPage />} />
+              <Route path="/support/cases/create" element={<CreateCasePage />} />
+              <Route path="/support/cases/:caseId" element={<CaseDetailPage />} />
 
               {/* Settings */}
               <Route path="/settings/profile" element={<ProfilePage />} />

@@ -1583,3 +1583,177 @@ export interface IAMServiceLinkedRole {
 
 // Organization Types
 export * from './organization';
+
+// ============================================
+// Support Types
+// ============================================
+
+// Support Case Types
+export type SupportCaseSeverity = 'low' | 'normal' | 'high' | 'urgent' | 'critical';
+export type SupportCaseStatus = 'open' | 'pending-customer-action' | 'pending-bhoomi-action' | 'resolved' | 'closed';
+export type SupportCaseCategory =
+  | 'account-and-billing'
+  | 'service-limit-increase'
+  | 'technical-support'
+  | 'general-guidance'
+  | 'security'
+  | 'abuse-report';
+
+export type SupportService =
+  | 'EC2'
+  | 'S3'
+  | 'Lambda'
+  | 'ECS'
+  | 'EKS'
+  | 'VPC'
+  | 'IAM'
+  | 'CloudWatch'
+  | 'Billing'
+  | 'Account'
+  | 'Other';
+
+export interface SupportCaseAttachment {
+  id: string;
+  fileName: string;
+  fileSize: number;
+  contentType: string;
+  uploadedAt: string;
+  uploadedBy: string;
+}
+
+export interface SupportCaseCommunication {
+  id: string;
+  body: string;
+  submittedBy: string;
+  submitterType: 'customer' | 'bhoomi-support';
+  submittedAt: string;
+  attachments: SupportCaseAttachment[];
+}
+
+export interface SupportCase {
+  id: string;
+  caseId: string;
+  displayId: string;
+  subject: string;
+  status: SupportCaseStatus;
+  severity: SupportCaseSeverity;
+  category: SupportCaseCategory;
+  service: SupportService;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+  resolvedAt?: string;
+  closedAt?: string;
+  submittedBy: string;
+  ccEmailAddresses: string[];
+  communications: SupportCaseCommunication[];
+  language: string;
+  accountId: string;
+}
+
+// Support Plan Types
+export type SupportPlanType = 'basic' | 'developer' | 'business' | 'enterprise';
+
+export interface SupportPlan {
+  type: SupportPlanType;
+  name: string;
+  description: string;
+  monthlyPrice: number | 'Contact Sales';
+  features: string[];
+  responseTime: {
+    critical?: string;
+    urgent?: string;
+    high?: string;
+    normal?: string;
+    low?: string;
+  };
+  supportChannels: ('documentation' | 'forums' | 'email' | 'chat' | 'phone' | 'tam')[];
+  technicalAccountManager: boolean;
+  trainingCredits: number;
+  conciergeSupport: boolean;
+}
+
+// Trusted Advisor Types
+export type TrustedAdvisorCategory =
+  | 'cost-optimizing'
+  | 'performance'
+  | 'security'
+  | 'fault-tolerance'
+  | 'service-limits';
+
+export type TrustedAdvisorStatus = 'ok' | 'warning' | 'error' | 'not-available';
+
+export interface TrustedAdvisorCheck {
+  id: string;
+  name: string;
+  description: string;
+  category: TrustedAdvisorCategory;
+  status: TrustedAdvisorStatus;
+  resourcesSummary: {
+    resourcesProcessed: number;
+    resourcesFlagged: number;
+    resourcesIgnored: number;
+    resourcesSuppressed: number;
+  };
+  flaggedResources: TrustedAdvisorFlaggedResource[];
+  estimatedMonthlySavings?: number;
+  estimatedPercentSavings?: number;
+  lastRefreshedAt: string;
+}
+
+export interface TrustedAdvisorFlaggedResource {
+  id: string;
+  status: 'ok' | 'warning' | 'error';
+  region?: string;
+  resourceId: string;
+  metadata: Record<string, string>;
+  isSuppressed: boolean;
+}
+
+// Health Dashboard Types
+export interface ServiceHealthEvent {
+  id: string;
+  service: SupportService | string;
+  region: string;
+  eventTypeCode: string;
+  eventTypeCategory: 'issue' | 'accountNotification' | 'scheduledChange';
+  statusCode: 'open' | 'upcoming' | 'closed';
+  startTime: string;
+  endTime?: string;
+  lastUpdatedTime: string;
+  eventScopeCode: 'ACCOUNT_SPECIFIC' | 'PUBLIC';
+  description: string;
+  affectedEntities: string[];
+}
+
+// Knowledge Base Types
+export interface KnowledgeArticle {
+  id: string;
+  title: string;
+  summary: string;
+  content: string;
+  category: string;
+  service: SupportService;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+  viewCount: number;
+  helpfulCount: number;
+  relatedArticles: string[];
+}
+
+// Support Contact Types
+export interface SupportContact {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  role: string;
+  isPrimary: boolean;
+  notificationPreferences: {
+    email: boolean;
+    sms: boolean;
+    cases: boolean;
+    healthEvents: boolean;
+  };
+}

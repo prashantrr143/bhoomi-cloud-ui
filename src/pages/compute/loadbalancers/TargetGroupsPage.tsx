@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
 import Pagination from '@cloudscape-design/components/pagination';
@@ -15,6 +16,7 @@ import type { TargetGroup } from '@/types';
 const PAGE_SIZE = 10;
 
 export function TargetGroupsPage() {
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<TargetGroup[]>([]);
   const [filterText, setFilterText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,7 +47,7 @@ export function TargetGroupsPage() {
             <SpaceBetween size="xs" direction="horizontal">
               <Button disabled={selectedItems.length !== 1}>Edit</Button>
               <Button disabled={selectedItems.length === 0}>Delete</Button>
-              <Button variant="primary">Create target group</Button>
+              <Button variant="primary" onClick={() => navigate('/compute/target-groups/create')}>Create target group</Button>
             </SpaceBetween>
           }
           description="Route requests to registered targets"
@@ -129,7 +131,7 @@ export function TargetGroupsPage() {
           title="No target groups"
           description="No target groups found. Create one to register targets for your load balancer."
           actionLabel="Create target group"
-          onAction={() => console.log('Create target group')}
+          onAction={() => navigate('/compute/target-groups/create')}
         />
       }
       stickyHeader

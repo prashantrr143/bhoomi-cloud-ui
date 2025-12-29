@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@cloudscape-design/components/box';
 import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
@@ -15,6 +16,7 @@ import type { VPC } from '@/types';
 const PAGE_SIZE = 10;
 
 export function VPCsPage() {
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<VPC[]>([]);
   const [filterText, setFilterText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,7 +49,7 @@ export function VPCsPage() {
               <Button disabled={selectedItems.length !== 1 || selectedItems[0]?.isDefault}>
                 Delete
               </Button>
-              <Button variant="primary">Create VPC</Button>
+              <Button variant="primary" onClick={() => navigate('/networking/vpcs/create')}>Create VPC</Button>
             </SpaceBetween>
           }
           description="Virtual Private Clouds for your resources"
@@ -120,7 +122,7 @@ export function VPCsPage() {
           title="No VPCs"
           description="No VPCs found. Create your first VPC to get started."
           actionLabel="Create VPC"
-          onAction={() => console.log('Create VPC')}
+          onAction={() => navigate('/networking/vpcs/create')}
         />
       }
       stickyHeader

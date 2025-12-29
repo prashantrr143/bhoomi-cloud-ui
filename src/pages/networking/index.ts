@@ -1,7 +1,11 @@
 export { VPCsPage } from './VPCsPage';
+export { CreateVPCPage } from './CreateVPCPage';
 export { SubnetsPage } from './SubnetsPage';
+export { CreateSubnetPage } from './CreateSubnetPage';
 export { SecurityGroupsPage } from './SecurityGroupsPage';
+export { CreateSecurityGroupPage } from './CreateSecurityGroupPage';
 export { RouteTablesPage } from './RouteTablesPage';
+export { CreateRouteTablePage } from './CreateRouteTablePage';
 export { InternetGatewaysPage } from './InternetGatewaysPage';
 export { NATGatewaysPage } from './NATGatewaysPage';
 export { ElasticIPsPage } from './ElasticIPsPage';

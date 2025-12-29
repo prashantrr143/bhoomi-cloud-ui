@@ -5,4 +5,4 @@ export { LambdaPage } from './lambda';
 export { ECSClustersPage, ECSServicesPage } from './ecs';
 export { EKSClustersPage, EKSNodeGroupsPage } from './eks';
 export { AutoScalingPage } from './autoscaling';
-export { LoadBalancersPage, TargetGroupsPage } from './loadbalancers';
+export { LoadBalancersPage, TargetGroupsPage, CreateTargetGroupPage } from './loadbalancers';

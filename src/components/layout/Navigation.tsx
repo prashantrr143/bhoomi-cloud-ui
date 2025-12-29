@@ -88,6 +88,15 @@ const navigationItems: SideNavigationProps.Item[] = [
       { type: 'link', text: 'Credits & Savings', href: '/billing/credits' },
     ],
   },
+  {
+    type: 'section',
+    text: 'Support',
+    items: [
+      { type: 'link', text: 'Support Center', href: '/support' },
+      { type: 'link', text: 'Support Cases', href: '/support/cases' },
+      { type: 'link', text: 'Create Case', href: '/support/cases/create' },
+    ],
+  },
 ];
 
 export function Navigation() {
